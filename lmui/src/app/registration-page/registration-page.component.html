@@ -1,0 +1,93 @@
+<div id="sect1">
+       
+  <div>
+    <form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)" class="center">
+        <mat-card style="width: 300px;height: 580PX;">
+            <h2 style="text-align: center;color: red;">REGISTRATION FORM</h2>
+        <p style="margin-left: 20px;">
+            <mat-form-field appearance="legacy" style="width: 236px;">
+                <mat-label>USER NAME</mat-label>
+              <input matInput type="text" placeholder="User name"
+               required maxlength="25"
+               [(ngModel)]="nickName" name="nickName"
+               #pickedName="ngModel">
+              <mat-hint> <div *ngIf="!pickedName.valid && pickedName.touched">
+                User name is required!
+              </div></mat-hint>
+            </mat-form-field>
+          </p>
+
+          <p style="margin-left: 20px;">
+            <mat-form-field appearance="fill" style="width: 236px;">
+              <mat-label>LAST NAME</mat-label>
+              <input matInput type="text" placeholder="Last Name"
+              required maxlength="25"
+              [(ngModel)]="lastname" name="lastname"
+              #pickedlastname="ngModel">
+              <mat-hint> <div *ngIf="!pickedlastname.valid && pickedlastname.touched">
+                last name is required!
+              </div></mat-hint>
+            </mat-form-field>
+          </p>
+
+          <p style="margin-left: 20px;">
+            <mat-form-field appearance="fill" style="width: 236px;">
+              <mat-label>EMAIL ID</mat-label>
+              <input matInput type="email" placeholder="Email"
+              required maxlength="25"
+              [(ngModel)]="email" name="email" email="true" ngModel
+              #userEmail="ngModel">
+              <mat-hint> <div *ngIf="!userEmail.valid && userEmail.touched">
+                EMAIL ID is required!
+              </div></mat-hint>
+            </mat-form-field>
+          </p>
+    
+          <p style="margin-left: 20px;">
+            <mat-form-field appearance="fill" style="width: 236px;">
+                <mat-label>Enter your password</mat-label>
+                <input  matInput [type]="hide ? 'password' : 'text'" placeholder="Password" required
+              [(ngModel)]="password" name="password" minlength="8"
+              #userPassword="ngModel">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>
+                    <div *ngIf="!userPassword.valid && userPassword.touched">
+                        Password is required!
+                      </div>
+                  </mat-hint>
+              </mat-form-field>
+          </p>
+
+          <p style="margin-left: 20px;">
+            <mat-form-field appearance="fill">
+                <mat-label>Confirm your password</mat-label>
+                <input  matInput [type]="hide ? 'password' : 'text'" placeholder="Confirm Password" required
+              [(ngModel)]="confirmpassword" name="confirmpassword" minlength="8"
+              #confirmuserPassword="ngModel">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>
+                    <div *ngIf="!confirmuserPassword.valid && confirmuserPassword.touched">
+                        Confirm Password is required!
+                      </div>
+                  </mat-hint>
+              </mat-form-field>
+          </p>
+       
+          <button  mat-raised-button color="primary" type="submit"  style="margin-left: 20px;width: 94px;">
+            Register</button>
+      
+        <button mat-flat-button color="primary" (click)="newUserForm.reset()" style="margin-left: 45px;width: 94px;">
+          Reset
+        </button>
+        <mat-card-content style="text-align: center;">
+          <a>Alredy Registrated ? </a> <a routerLink="/" routerLinkActive="active">LOGIN HERE</a>
+       </mat-card-content>
+    </mat-card>
+      </form>
+    </div>
+
+    </div> 

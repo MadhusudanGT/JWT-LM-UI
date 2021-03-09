@@ -10,11 +10,11 @@ export class JwtClientServiceService {
 
 
   // public generateToken(request) {
-  //   return this.http.post<string>("http://localhost:9192/authenticate", request,{  responseType: 'text' as 'json' });
+  //   return this.httpClient.post<string>("http://localhost:9192/authenticate", request,{  responseType: 'text' as 'json' });
   // }
-  private baseUrl = 'http://localhost:9192/authenticate'; 
+  baseUrl="http://localhost:9192/";
   generateToken(request: object): Observable<object> {  
-    return this.http.post(`${this.baseUrl}`, request,{  responseType: 'text' as 'json' });  
+    return this.http.post(`${this.baseUrl}`+'authenticate', request,{  responseType: 'text' as 'json' });  
   }  
 
 
