@@ -18,9 +18,18 @@ export class JwtClientServiceService {
   }  
 
 
-  public welcome(token) {
-    let tokenStr = 'Bearer ' + token;
-    const headers = new HttpHeaders().set('Authorization', tokenStr,);
-    return this.http.get<string>("http://localhost:9192/",{headers, responseType: 'text' as 'json' });
+  public welcome(token) : Observable<Object>{
+    console.log("token"+token)
+   const opts={
+     headers:new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' +token,
+     }),
+     responseType: 'text' as 'json' //important
+   }
+    // let tokenStr = 'Bearer ' + token;
+    // const headers = new HttpHeaders().set('Authorization', tokenStr,);
+    // return this.http.get("http://localhost:9192/",headers);
+    return this.http.get<String>("http://localhost:9192/test/", opts);
   }
 }
