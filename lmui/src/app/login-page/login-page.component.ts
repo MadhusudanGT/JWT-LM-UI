@@ -53,7 +53,7 @@ this.service.generateToken(authRequest)
          if(data){
           console.log(data.toString())
           localStorage.setItem('token',data.toString())
-          this.accessApi(data.toString())
+          this.accessApi(data)
           this.SuccessSnackBar()
          }
          else{
@@ -68,8 +68,7 @@ response:any;
   public accessApi(token){
 this.service.welcome(token)  
       .subscribe(async data => {
-        this.response=data.toString()
-console.log("auth"+data.toString());
+console.log("auth"+data);
       })
   }
 }
