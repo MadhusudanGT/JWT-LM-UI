@@ -10,13 +10,19 @@ import {FormsModule} from '@angular/forms';
 import {RegistrationPageComponent} from "../app/registration-page/registration-page.component";
 import {LoginPageComponent} from "../app/login-page/login-page.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { EmailDashBoardComponent } from './email-dash-board/email-dash-board.component';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { ContentComponent } from './content/content.component';
 @NgModule({
   declarations: [
     AppComponent,
     SecurityComponent,
     RegistrationPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    EmailDashBoardComponent,
+    ContentComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MaterialModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+        ButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
