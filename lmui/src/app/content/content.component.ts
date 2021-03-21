@@ -14,5 +14,5 @@ export class ContentComponent{
   ngOnInit(): void {
     
   }
- 
+  panelOpenState = false;
 }

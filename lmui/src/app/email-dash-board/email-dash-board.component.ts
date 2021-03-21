@@ -1,7 +1,7 @@
 
 import { Component, ViewEncapsulation ,OnInit} from '@angular/core';
 import { DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
-
+import { Router } from '@angular/router';
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'app-email-dash-board',
@@ -10,7 +10,7 @@ import { DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 })
 export class EmailDashBoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,4 +29,8 @@ export class EmailDashBoardComponent implements OnInit {
   public onSelect(ev: DrawerSelectEvent): void {
     this.selected = ev.item.text;
   }
+
+  btnClick(){
+    this.router.navigateByUrl('/mailbox');
+};
 }

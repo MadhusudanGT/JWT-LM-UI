@@ -1,0 +1,28 @@
+
+<form class="example-form" #newMessageForm="ngForm" (ngSubmit)="onSubmit(newMessageForm.value)">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email Id</mat-label>
+    <input matInput [(ngModel)]="email" type="email" name="email" ngModel [email]="true"  
+    required>
+  </mat-form-field>
+
+     <mat-form-field class="example-full-width">
+        <mat-label>USER NAME</mat-label>
+        <input matInput [(ngModel)]="user" name="user"   
+        required>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>MAIL SUBJECT</mat-label>
+        <input matInput [(ngModel)]="subject" name="subject"  ngModel required>
+      </mat-form-field>
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>MESSAGE</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St" required [(ngModel)]="message" name="message"  ngModel>HI SIR,</textarea>
+      </mat-form-field>
+    </p>
+    <button  mat-raised-button color="primary" type="submit"  style="margin-left: 20px;width: 80%;">
+      send</button>
+  </form>
+

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SecurityComponent } from './security/security.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MaterialModule} from './materials-module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {RegistrationPageComponent} from "../app/registration-page/registration-page.component";
 import {LoginPageComponent} from "../app/login-page/login-page.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,8 @@ import { EmailDashBoardComponent } from './email-dash-board/email-dash-board.com
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { ContentComponent } from './content/content.component';
+import { MailBoxComponent } from './mail-box/mail-box.component';
+import { AuthInterceptor } from './AuthInterceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { ContentComponent } from './content/content.component';
     LoginPageComponent,
     EmailDashBoardComponent,
     ContentComponent,
+    MailBoxComponent,
 
   ],
   imports: [
@@ -30,11 +33,12 @@ import { ContentComponent } from './content/content.component';
     HttpClientModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     LayoutModule,
         ButtonsModule
   ],
-  providers: [],
+  providers: [AuthInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
