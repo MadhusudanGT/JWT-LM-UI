@@ -1,0 +1,138 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.2%" fxLayoutAlign="center" style="width: 100%;height:100%">
+    
+    <div fxFlex="50%" style="color: white;background-color: blue; text-align: center;">
+      <div >
+        <h1>Login</h1><br>
+        <a>    Get access to your order <br>WishLsit and Recommendation</a>
+      </div>
+      <br>
+      <!-- <video width="310" height="200" controls> 
+           
+      </video> -->
+   <br><br>
+      <div>
+        <img  class="images" src="/assets/IMG/Ecorner_Shop.png" alt="logo" height= "135px" width="236px">
+       
+    </div>
+   
+  </div>
+  
+      <div fxFlex="50%" >
+        
+          <mat-card class="example-card" layout="row" layout-align="center center" style="margin-top: 107px;">
+            <div>
+            <mat-label><b>LOGIN PAGE</b></mat-label>
+         <span style="margin: 50px;"></span>
+         <span mat-stroked-button routerLink="/" routerLinkActive="active"><i class="fa fa-window-close" aria-hidden="true"  style="font-size:28px;color: red;"></i></span><br>
+        </div>  
+          <!-- ------------- -->
+            <br><br>
+            <button mat-raised-button  (click)="emailtag()" *ngIf="btn1" color="primary" style="margin:5px;">LOGIN WITH EMAIL</button>
+           
+            <button mat-raised-button  (click)="phonetag()" *ngIf="btn2" color="primary" style="margin:5px;">LOGIN WITH MOBILE NO</button>
+          <br><br>
+            <!-- ---------- -->
+          <div *ngIf="expression1">
+              <mat-card-content>
+                <form [formGroup]="angForm" novalidate>
+                  <div class="form-group">
+                    <div style="text-align: center;">
+                     
+                      
+                      <mat-form-field class="example-full-width">
+                        <mat-label>email</mat-label>
+                        <input  [(ngModel)]="email" matInput placeholder="email"  class="form-control" value="email" formControlName="email" required>
+                      </mat-form-field>
+                      <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+                        <div *ngIf="angForm.controls['email'].errors?.required">
+                        email  is required.
+                      </div>
+                    </div>
+          <br><br>
+          <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>password</mat-label>
+            <input matInput placeholder="password"  [(ngModel)]="pass" value="password" required minlength="8" class="form-control" formControlName="password">
+          </mat-form-field>
+         
+        </div>  
+        <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['password'].errors?.required">
+          password is required.
+        </div>
+      </div>            
+            </div>
+            </div>
+            </form>
+              </mat-card-content>
+      
+            
+            <div>
+              <mat-card-actions>
+                 <button mat-raised-button  (click)="loginemail()" color="primary">LOGIN</button>
+              </mat-card-actions>
+        </div>
+      </div>
+  <!-- --- -->
+  <div *ngIf="expression2">
+  
+    <mat-card-content>
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <div style="text-align: center;">
+           
+            
+            <mat-form-field class="example-full-width">
+              <mat-label>MOBILE PHONE NO</mat-label>
+              <input  [(ngModel)]="pnumber" matInput placeholder="phoneno"  class="form-control" value="pnumber" formControlName="pnumber" required>
+            </mat-form-field>
+            <div *ngIf="angForm.controls['pnumber'].invalid && (angForm.controls['pnumber'].dirty || angForm.controls['pnumber'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['pnumber'].errors?.required">
+              phone no is required.
+            </div>
+          </div>
+  
+        <div>
+          </div>
+          </div>
+          </div>
+        </form>
+        </mat-card-content>
+        
+    <div *ngIf="otprow">  
+      <ng-otp-input #ngOtpInput [config]="{length:4}"></ng-otp-input>
+    </div>
+          <mat-card-actions>
+             <button mat-raised-button    (click)="loginphone()" color="primary" style="margin:15px;">LOGIN USEING OTP</button>
+          </mat-card-actions>
+      </div>
+  
+  
+  <!-- ---- -->
+  
+  <!-- --------- -->
+  <div style="text-align: center;">
+    <i class="fa fa-twitter" aria-hidden="true" style="font-size:36px;color:blue"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+    <i class="fa fa-google" aria-hidden="true" style="font-size:30px;color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+    <i class="fa fa-facebook-square" style="font-size:36px;color:blue"></i>
+    
+  </div>
+  <br><br>
+  <div style="text-align: center;">
+      <mat-card-content>
+          ONE CLICK SIGN UP WITH SOCIAL MEDIA ACCOUNTS
+      </mat-card-content>
+      <mat-card-content>
+         <!-- <a>New To Sarvavastu ? </a> <a routerLink="/registration" routerLinkActive="active">Create New Account</a> -->
+      </mat-card-content>
+  </div>
+           </mat-card>
+          </div>
+       
+    </div>
+  
+  
+  
+  
+  
+  

@@ -16,6 +16,9 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { ContentComponent } from './content/content.component';
 import { MailBoxComponent } from './mail-box/mail-box.component';
 import { AuthInterceptor } from './AuthInterceptor';
+import { LoginComponent } from './login/login.component';
+import { NgOtpInputModule } from  'ng-otp-input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,7 @@ import { AuthInterceptor } from './AuthInterceptor';
     EmailDashBoardComponent,
     ContentComponent,
     MailBoxComponent,
+LoginComponent,
 
   ],
   imports: [
@@ -36,7 +40,8 @@ import { AuthInterceptor } from './AuthInterceptor';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     LayoutModule,
-        ButtonsModule
+        ButtonsModule,
+        NgOtpInputModule
   ],
   providers: [AuthInterceptor],
   bootstrap: [AppComponent]

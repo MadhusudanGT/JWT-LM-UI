@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+          "name": "Licensed Frozen Hat",
+          "description": "The Indian rupee (sign: ₹; currency code: INR) is the official currency of India. The rupee is subdivided into 100 paise (singular: paisa), though as of 2019, coins of denomination of 1 rupee is the lowest value in use. The issuance of the currency",
+          "price": "170.00",
+          "imageUrl": "/assets/IMG/k5.jfif",
+          "quantity": 56840,
+          "manficater":"Best before 08 Nov 2020 Manufactured date 13 May 2020",
+          "images" : [
+             "/assets/IMG/bmw.jfif" ,  
+             "/assets/IMG/bmw1.jfif" ,  
+              "/assets/IMG/bmw2.jfif" ,  
+            "/assets/IMG/bmw3.jfif" ,  
+               "/assets/IMG/k3.jfif" ,  
+          "/assets/IMG/k4.jfif" ,  
+               "/assets/IMG/k5.jfif" ,  
+               "/assets/IMG/k6.jfif" ,  
+              "/assets/IMG/sarvavastu_Logo.png" 
+            ]
+    }
+  
+]
