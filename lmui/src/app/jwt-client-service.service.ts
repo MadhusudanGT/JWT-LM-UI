@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Email } from './email';
 
 
 const baseUrl = 'http://localhost:9192/';
@@ -41,7 +42,30 @@ export class JwtClientServiceService {
     return this.http.post(baseUrl+"email", data);
   }
 
-  public getEmail():Observable<object>{
-    return this.http.get(baseUrl+'email/'+'emails');
+  // public getEmail():Observable<object>{
+  //   const opts={
+  //     headers:new HttpHeaders({
+  //      'Content-Type': 'application/json',
+  //      'Authorization': 'Bearer ' +localStorage.getItem('token'),
+  //     }),
+  //     responseType: 'text' as 'json' //important
+  //   }
+  //   return this.http.get(baseUrl+'emails');
+  // }
+
+  public getEmail(token) : Observable<any>{
+   const opts={
+     headers:new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' +token,
+     }),
+     responseType: 'text' as 'json' //important
+   }
+    return this.http.get(baseUrl+'emails',opts);
   }
+
+ 
+
 }
+
+

@@ -1,4 +1,5 @@
-
+<button style="float: right;" mat-fab color="primary" (click)="logout();"aria-label="Example icon button with a delete icon">LogOut</button>
+  
 <form class="example-form" #newMessageForm="ngForm" (ngSubmit)="onSubmit(newMessageForm.value)">
   <mat-form-field class="example-full-width">
     <mat-label>Email Id</mat-label>
@@ -8,7 +9,7 @@
 
      <mat-form-field class="example-full-width">
         <mat-label>USER NAME</mat-label>
-        <input matInput [(ngModel)]="user" name="user"   
+        <input matInput [(ngModel)]="username" name="username"   
         required>
       </mat-form-field>
     

@@ -1,7 +1,8 @@
-
 import { Component, ViewEncapsulation ,OnInit} from '@angular/core';
 import { DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 import { Router } from '@angular/router';
+import { JwtClientServiceService } from '../jwt-client-service.service';
+
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'app-email-dash-board',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class EmailDashBoardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private service:JwtClientServiceService) { }
 
   ngOnInit(): void {
   }
@@ -33,4 +34,9 @@ export class EmailDashBoardComponent implements OnInit {
   btnClick(){
     this.router.navigateByUrl('/mailbox');
 };
+
+logout(){
+  this.router.navigateByUrl('');
+  localStorage.clear();
+}
 }

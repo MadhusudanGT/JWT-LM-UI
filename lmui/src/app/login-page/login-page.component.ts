@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { JwtClientServiceService } from '../jwt-client-service.service';
 import { TokenStorageService } from '../TokenStorageService';
-
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit {
   
   user: string='';
   password:string='';
-  constructor(private _snackBar: MatSnackBar,private service:JwtClientServiceService,private tokenStorage: TokenStorageService) {}
+  constructor(private router: Router,private _snackBar: MatSnackBar,private service:JwtClientServiceService,private tokenStorage: TokenStorageService) {}
 
   openSnackBar() {
     this._snackBar.open('PLEASE FILL VALIDE DETAILS', "!!!!", {
@@ -29,7 +29,6 @@ export class LoginPageComponent implements OnInit {
       duration: 10000,
     });
   }
-
 
   onSubmit(form:NgForm){
 if (form.valid) {
@@ -53,15 +52,16 @@ if (form.valid) {
 // let resp=this.service.generateToken(authRequest);
 console.log(authRequest)
 this.service.generateToken(authRequest)  
-      .subscribe(async data => 
+      .subscribe(data => 
        {
          if(data){
           console.log(data.toString())
-          // localStorage.setItem('token',data.toString())
+           localStorage.setItem('token',data.toString())
           this.tokenStorage.saveToken(data.toString());
           this.tokenStorage.saveUser(authRequest);
           this.accessApi(data)
           this.SuccessSnackBar()
+          this.router.navigate(['emailDashboard']);
          }
          else{
           error => console.log(error)
